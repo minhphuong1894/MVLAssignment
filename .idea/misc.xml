@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Android/MVLExam/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2703125" />
+        <entry key="..\:/Android/MVLExam/app/src/main/res/drawable/circle_background.xml" value="0.2703125" />
+        <entry key="..\:/Android/MVLExam/app/src/main/res/drawable/circle_background_moving.xml" value="0.2703125" />
+        <entry key="..\:/Android/MVLExam/app/src/main/res/drawable/ic_baseline_home_work_24.xml" value="0.2703125" />
+        <entry key="..\:/Android/MVLExam/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2703125" />
+        <entry key="..\:/Android/MVLExam/app/src/main/res/drawable/ic_logo.xml" value="0.2703125" />
+        <entry key="..\:/Android/MVLExam/app/src/main/res/drawable/line_background.xml" value="0.2703125" />
+        <entry key="..\:/Android/MVLExam/app/src/main/res/drawable/splash_image.xml" value="0.2703125" />
+        <entry key="..\:/Android/MVLExam/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Android/MVLExam/app/src/main/res/layout/fragment_book.xml" value="0.24010416666666667" />
+        <entry key="..\:/Android/MVLExam/app/src/main/res/layout/fragment_history.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android/MVLExam/app/src/main/res/layout/fragment_map.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android/MVLExam/app/src/main/res/layout/fragment_nick_name.xml" value="0.24010416666666667" />
+        <entry key="..\:/Android/MVLExam/app/src/main/res/layout/nav_graph.xml" value="0.1793478260869565" />
+        <entry key="..\:/Android/MVLExam/app/src/main/res/layout/progress_dialog.xml" value="0.1793478260869565" />
+        <entry key="..\:/Users/kasuk/Desktop/FinalProject/MVLAssignment/app/src/main/res/layout/fragment_history.xml" value="0.13269927536231885" />
+        <entry key="..\:/Users/kasuk/Desktop/FinalProject/MVLAssignment/app/src/main/res/layout/fragment_location.xml" value="0.20923913043478262" />
+        <entry key="..\:/Users/kasuk/Desktop/New folder (3)/MVLExam/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.2703125" />
+        <entry key="..\:/Users/kasuk/Desktop/New folder (3)/MVLExam/app/src/main/res/layout/activity_main.xml" value="0.24818840579710144" />
+        <entry key="..\:/Users/kasuk/Desktop/New folder (3)/MVLExam/app/src/main/res/layout/fragment_book.xml" value="0.24818840579710144" />
+        <entry key="..\:/Users/kasuk/Desktop/New folder (3)/MVLExam/app/src/main/res/layout/fragment_map.xml" value="0.264" />
+        <entry key="..\:/Users/kasuk/Desktop/New folder (3)/MVLExam/app/src/main/res/layout/fragment_nick_name.xml" value="0.14855072463768115" />
+        <entry key="..\:/Users/kasuk/Desktop/New folder (3)/MVLExam/app/src/main/res/layout/include_header.xml" value="0.24818840579710144" />
+        <entry key="..\:/Users/kasuk/Desktop/New folder (3)/MVLExam/app/src/main/res/layout/layout_loading_dialog.xml" value="0.24818840579710144" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.2513586956521739" />
+        <entry key="app/src/main/res/layout/fragment_book.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_history.xml" value="0.2740036231884058" />
+        <entry key="app/src/main/res/layout/fragment_loadmore_refresh.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_location.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_map.xml" value="0.2513586956521739" />
+        <entry key="app/src/main/res/layout/fragment_nick_name.xml" value="0.19635416666666666" />
+        <entry key="app/src/main/res/layout/item_history.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/item_location.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

@@ -1,0 +1,163 @@
+package com.mvl.assignment.util
+
+import android.content.res.ColorStateList
+import android.graphics.drawable.Drawable
+import android.net.Uri
+import android.view.View
+import android.webkit.WebView
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.annotation.DrawableRes
+import androidx.core.widget.ContentLoadingProgressBar
+import androidx.databinding.BindingAdapter
+import androidx.recyclerview.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.bumptech.glide.request.RequestListener
+import com.bumptech.glide.request.RequestOptions
+import com.bumptech.glide.signature.ObjectKey
+import com.mvl.assignment.BuildConfig
+
+@BindingAdapter("enableRefresh")
+fun SwipeRefreshLayout.enableRefresh(enable: Boolean?) {
+    isEnabled = enable == true
+}
+
+@BindingAdapter("isRefreshing")
+fun SwipeRefreshLayout.customRefreshing(refreshing: Boolean?) {
+    isRefreshing = refreshing == true
+}
+
+@BindingAdapter("onScrollListener")
+fun RecyclerView.customScrollListener(listener: RecyclerView.OnScrollListener?) {
+    if (listener != null) addOnScrollListener(listener)
+}
+
+@BindingAdapter("glideSrc")
+fun ImageView.setGlideSrc(@DrawableRes src: Int?) {
+    Glide.with(context).load(src).into(this)
+}
+
+@BindingAdapter("loadUri")
+fun ImageView.loadLocalImage(uri: Uri?) {
+    Glide.with(context).load(uri).into(this)
+}
+
+@BindingAdapter(value = ["loadImageLocal"])
+fun ImageView.loadLocalImage(imageName: String?) {
+    if (imageName.isNullOrBlank().not()) {
+        Glide.with(context)
+            .load(resources.getIdentifier(imageName, "drawable", BuildConfig.APPLICATION_ID))
+            .into(this)
+    }
+}
+
+@BindingAdapter(value = ["isLoading"])
+fun ContentLoadingProgressBar.show(isLoading: Boolean?) {
+    if (isLoading == true) show() else hide()
+}
+
+@BindingAdapter(
+    value = [
+        "imageUrl",
+        "thumbnailUrl",
+        "placeholder",
+        "errorDrawable",
+        "requestListener",
+        "centerCrop",
+        "fitCenter",
+        "circleCrop",
+        "skipMemoryCache",
+        "diskCacheStrategy",
+        "signatureKey"
+    ],
+    requireAll = false
+)
+fun ImageView.loadImage(
+    imageUrl: String? = null,
+    thumbnailUrl: String? = null,
+    placeHolderDrawable: Drawable? = null,
+    errorDrawable: Drawable? = null,
+    requestListener: RequestListener<Drawable>? = null,
+    centerCrop: Boolean = false,
+    fitCenter: Boolean = false,
+    circleCrop: Boolean = false,
+    skipMemoryCache: Boolean? = null,
+    diskCacheStrategy: DiskCacheStrategy? = null,
+    signatureKey: String? = null
+) {
+    if (imageUrl.isNullOrBlank()) {
+        if (placeHolderDrawable != null) setImageDrawable(placeHolderDrawable)
+        return
+    }
+
+    val requestOptions = RequestOptions().apply {
+        if (skipMemoryCache != null) skipMemoryCache(skipMemoryCache)
+
+        // cache type: https://futurestud.io/tutorials/glide-how-to-choose-the-best-caching-preference
+        // Glide 4.x: DiskCacheStrategy.RESOURCE Glide 3.x: DiskCacheStrategy.RESULT caches only the final image, after reducing the resolution (and possibly transformations) (default behavior of Glide 3.x)
+        // Glide 4.x: DiskCacheStrategy.DATA, Glide 3.x: DiskCacheStrategy.SOURCE caches only the original full-resolution image
+        // Glide 4.x only: DiskCacheStrategy.AUTOMATIC intelligently chooses a cache strategy based on the resource (default behavior of Glide 4.x)
+        // Glide 3.x & 4.x: DiskCacheStrategy.ALL caches all versions of the image
+        // Glide 3.x & 4.x: DiskCacheStrategy.NONE caches nothing
+        diskCacheStrategy(diskCacheStrategy ?: DiskCacheStrategy.RESOURCE)
+
+        if (placeHolderDrawable != null) placeholder(placeHolderDrawable)
+        if (errorDrawable != null) error(errorDrawable)
+
+        // crop type
+        if (centerCrop) centerCrop()
+        if (fitCenter) fitCenter()
+        if (circleCrop) circleCrop()
+
+        if (!signatureKey.isNullOrBlank()) {
+            signature(ObjectKey(signatureKey))
+        }
+    }
+}
+
+@BindingAdapter("clickSafe")
+fun View.setClickSafe(listener: View.OnClickListener?) {
+    setOnClickListener(object : View.OnClickListener {
+        var lastClickTime: Long = 0
+
+        override fun onClick(v: View) {
+            if (System.currentTimeMillis() - lastClickTime < THRESHOLD_CLICK_TIME) return
+            listener?.onClick(v)
+            lastClickTime = System.currentTimeMillis()
+        }
+    })
+}
+
+@BindingAdapter("onSingleClick")
+fun View.setSingleClick(execution: () -> Unit) {
+    setOnClickListener(object : View.OnClickListener {
+        var lastClickTime: Long = 0
+
+        override fun onClick(p0: View?) {
+            if (System.currentTimeMillis() - lastClickTime < THRESHOLD_CLICK_TIME) return
+            lastClickTime = System.currentTimeMillis()
+            execution.invoke()
+        }
+    })
+}
+
+@BindingAdapter("loadUrl")
+fun WebView.loadWebUrl(url: String?) {
+    url?.apply {
+        loadUrl(url)
+    }
+}
+
+@BindingAdapter("backgroundTint")
+fun TextView.customBackgroundTint(color: Int?) {
+    if (color == null) return
+    background?.setTint(color)
+}
+
+@BindingAdapter("tint")
+fun ImageView.customTint(color: Int?) {
+    if (color == null) return
+    imageTintList = ColorStateList.valueOf(color)
+}

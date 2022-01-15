@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="item"
+            type="com.mvl.assignment.domain.model.HistoryItem" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--A-->
+        <TextView
+            android:id="@+id/tvLabelA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="A:"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvLocationNameA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/tvLabelA"
+            app:layout_constraintTop_toTopOf="@+id/tvLabelA"
+            tools:text="12" />
+
+        <TextView
+            android:id="@+id/tvLocationLatA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/tvLabelA"
+            app:layout_constraintTop_toBottomOf="@+id/tvLocationNameA"
+            tools:text="12" />
+
+        <TextView
+            android:id="@+id/tvLocationLngA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/tvLabelA"
+            app:layout_constraintTop_toBottomOf="@+id/tvLocationLatA"
+            tools:text="12" />
+
+        <TextView
+            android:id="@+id/tvAqiA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/tvLabelA"
+            app:layout_constraintTop_toBottomOf="@+id/tvLocationLngA"
+            tools:text="12" />
+        <!--B-->
+        <TextView
+            android:id="@+id/tvLabelB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="B:"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvAqiA" />
+
+        <TextView
+            android:id="@+id/tvLocationNameB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/tvLabelB"
+            app:layout_constraintTop_toTopOf="@+id/tvLabelB"
+            tools:text="12" />
+
+        <TextView
+            android:id="@+id/tvLocationLatB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/tvLabelB"
+            app:layout_constraintTop_toBottomOf="@+id/tvLocationNameB"
+            tools:text="12" />
+
+        <TextView
+            android:id="@+id/tvLocationLngB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/tvLabelB"
+            app:layout_constraintTop_toBottomOf="@+id/tvLocationLatB"
+            tools:text="12" />
+
+        <TextView
+            android:id="@+id/tvAqiB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/tvLabelB"
+            app:layout_constraintTop_toBottomOf="@+id/tvLocationLngB"
+            tools:text="12" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorPrimary"
+            android:layout_marginTop="12dp"
+            app:layout_constraintTop_toBottomOf="@+id/tvAqiB"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

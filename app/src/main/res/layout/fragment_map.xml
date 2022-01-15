@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <FrameLayout
+            android:id="@+id/pinViewLineFrame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/line_top_margin"
+            android:background="@drawable/line_background" />
+
+        <FrameLayout
+            android:id="@+id/pinViewCircleFrame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/circle_background">
+
+            <TextView
+                android:id="@+id/tvAgi"
+                android:layout_width="@dimen/inner_circle_radius"
+                android:layout_height="@dimen/inner_circle_radius"
+                android:layout_gravity="top|center_horizontal"
+                android:layout_margin="@dimen/inner_circle_margin"
+                android:gravity="center"
+                android:text="Agi : 12"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_size" />
+
+            <ProgressBar
+                android:id="@+id/pgAgi"
+                android:layout_width="@dimen/inner_circle_radius"
+                android:layout_height="@dimen/inner_circle_radius"
+                android:layout_gravity="top|center_horizontal"
+                android:layout_margin="@dimen/inner_circle_margin"
+                android:contentDescription="@null"
+                android:indeterminate="true"
+                android:visibility="gone" />
+        </FrameLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:layout_margin="16dp">
+
+            <Button
+                android:id="@+id/btnSet"
+                android:layout_width="@dimen/button_view_width"
+                android:layout_height="@dimen/button_view_height"
+                android:layout_gravity="bottom|center"
+                android:background="@color/yellow"
+                android:gravity="center"
+                android:text="Set A"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvLocationA"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvLocationA"
+                android:layout_width="@dimen/text_view_width"
+                android:layout_height="@dimen/text_view_height"
+                android:layout_gravity="bottom|center"
+                android:background="@color/white"
+                android:ellipsize="end"
+                android:gravity="center|left"
+                android:maxLines="1"
+                android:text=""
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvLocationB"
+                android:layout_width="@dimen/text_view_width"
+                android:layout_height="@dimen/text_view_height"
+                android:layout_gravity="bottom|center"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:ellipsize="end"
+                android:gravity="center|left"
+                android:maxLines="1"
+                android:text=""
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvLocationA" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+</layout>
